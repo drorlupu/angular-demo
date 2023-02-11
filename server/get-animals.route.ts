@@ -1,7 +1,7 @@
 
 
 import {Request, Response} from 'express';
-import {ANIMALS, filterAnimalsByCategoryId} from "./db-data";
+import {filterAnimalsByCategoryId} from "./db-data";
 
 
 

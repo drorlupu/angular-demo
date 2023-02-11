@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Observable } from 'rxjs';
 import { Store } from './services/store.service';
 
 @Component({
@@ -26,4 +27,13 @@ export class AppComponent {
         });
   }
   title = 'animal-shelter-angular';
+  isExpanded = true;
+
+  public toggleMenu() {
+    this.isExpanded = !this.isExpanded;
+  }
+
+  getSelectedAnimals() : Observable<number> {
+    return this.store.selectedCount$;
+  }
 }

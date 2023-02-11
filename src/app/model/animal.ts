@@ -4,5 +4,6 @@ export interface Animal {
     nickName: string,
     age: number,
     story: string,
-    imageUrl: string
+    imageUrl: string,
+    checked: boolean
 }

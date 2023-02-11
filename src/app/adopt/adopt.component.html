@@ -1,0 +1,7 @@
+<h1>Congratulations!</h1>
+<p>You've decided to meet these lovelies:</p>
+<div *ngFor="let animal of selectedAnimals$ | async">
+    <p>{{ animal.nickName }} the {{ (getCategoryName(animal.categoryId) | async) }}</p>
+</div>
+<br>
+<p>See you at the animal shelter!</p>

@@ -91,9 +91,9 @@ export const ANIMALS = {
           id : 8,
           categoryId: 1,
           age: 4,
-          nickName: "Bella",
-          story: "Bella was a stray dog who was found wandering the streets, hungry and alone. She was taken in by a local animal rescue organization and given the love and care she needed to thrive. Despite her rough start in life, Bella is a sweet and friendly dog who loves to play and cuddle with people. She is now looking for a forever home where she can be loved and cared for the rest of her life.",
-          imageUrl: "../assets/dogs/bella.jpg"
+          nickName: "Johnny",
+          story: "Johnny was a stray dog who was found wandering the streets, hungry and alone. He was taken in by a local animal rescue organization and given the love and care he needed to thrive. Despite his rough start in life, Johnny is a sweet and friendly dog who loves to play and cuddle with people. He is now looking for a forever home where he can be loved and cared for the rest of his life.",
+          imageUrl: "../assets/dogs/johnny.jpg"
         },
     9 : {
           id : 9,
