@@ -13,13 +13,13 @@ import { MatListModule } from '@angular/material/list';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { CategoriesComponent } from './categories/categories.component';
+import { FriendsComponent } from './friends/friends.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AnimalCardComponent } from './animal-card/animal-card.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { AdoptComponent } from './adopt/adopt.component';
+import { MeetComponent } from './meet/meet.component';
 
 export const ROUTES: Routes = [
   {
@@ -27,12 +27,12 @@ export const ROUTES: Routes = [
     component: AboutComponent,
   },
   {
-    path: "animals",
-    component: CategoriesComponent,
+    path: "friends",
+    component: FriendsComponent,
   },
   {
-    path: "adopt",
-    component: AdoptComponent,
+    path: "meet",
+    component: MeetComponent,
   },
 
   { path: "**", redirectTo: "about" },
@@ -42,11 +42,11 @@ export const ROUTES: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    CategoriesComponent,
+    FriendsComponent,
     AnimalCardComponent,
     AboutComponent,
     SidenavComponent,
-    AdoptComponent
+    MeetComponent
   ],
   imports: [
     RouterModule.forRoot(ROUTES),

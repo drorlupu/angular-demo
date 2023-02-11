@@ -1,1 +1,1 @@
-export type RouteDef = { link: string, name: string, icon: string, category : boolean };
+export type RouteDef = { link: string, name: string, icon: string, showCount : boolean };

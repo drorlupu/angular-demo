@@ -4,8 +4,7 @@
     fixedInViewport="true"
     mode="side"
     opened="{{ isExpanded }}">
-    <app-side-nav [isExpanded]="isExpanded" [selectedAnimals]="getSelectedAnimals() | async" (toggleMenu)="toggleMenu()"
-    ></app-side-nav>
+    <app-side-nav [isExpanded]="isExpanded" (toggleMenu)="toggleMenu()"></app-side-nav>
   </mat-sidenav>
   <mat-sidenav-content [style.margin-left.px]="!isExpanded ? 60 : 250">
     <mat-toolbar>

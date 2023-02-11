@@ -1,5 +1,5 @@
 <mat-tab-group>
-    <mat-tab *ngFor="let category of getCategories() | async">
+    <mat-tab *ngFor="let category of categories$ | async">
         <ng-template mat-tab-label>
             <mat-icon svgIcon="{{category.name}}"></mat-icon>&nbsp;{{category.name}}
         </ng-template>

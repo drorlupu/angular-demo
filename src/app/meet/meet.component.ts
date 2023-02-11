@@ -5,11 +5,11 @@ import { Category } from '../model/category';
 import { Store } from '../services/store.service';
 
 @Component({
-  selector: 'app-adopt',
-  templateUrl: './adopt.component.html',
-  styleUrls: ['./adopt.component.css']
+  selector: 'app-meet',
+  templateUrl: './meet.component.html',
+  styleUrls: ['./meet.component.css']
 })
-export class AdoptComponent {
+export class MeetComponent {
 
   selectedAnimals$ : Observable<Animal[]>;
   categories$ : Observable<Category[]>;

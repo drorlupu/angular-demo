@@ -10,6 +10,10 @@ import { Store } from './services/store.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
+  title = 'animal-shelter-angular';
+  isExpanded = true;
+  
   constructor(
     private store: Store,
     private iconRegistry: MatIconRegistry,
@@ -26,8 +30,7 @@ export class AppComponent {
           });
         });
   }
-  title = 'animal-shelter-angular';
-  isExpanded = true;
+  
 
   public toggleMenu() {
     this.isExpanded = !this.isExpanded;

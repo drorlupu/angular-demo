@@ -8,27 +8,35 @@ import { Store } from '../services/store.service';
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss']
 })
-export class SidenavComponent {
+export class SidenavComponent implements OnDestroy {
   @Input() isExpanded: boolean = false;
-  @Input() selectedAnimals: number | null = 0;
   @Output() toggleMenu = new EventEmitter();
 
-  constructor(private store : Store) {
+  private selectedAnimalsCount: number = 0;
+  private subscription: Subscription;
+
+  constructor(store : Store) {
+    this.subscription = store.selectedCount$.subscribe(val => this.selectedAnimalsCount = val);
   }
 
   public routeLinks : RouteDef[] = [
-    { link: "about", name: "About", icon: "dashboard", category : false},
-    { link: "animals", name: "Friends", icon: "account_balance", category : true},
-    { link: "adopt", name: "Meet", icon: "calendar_today", category : false},
+    { link: "about", name: "About", icon: "dashboard", showCount : false},
+    { link: "friends", name: "Friends", icon: "account_balance", showCount : true},
+    { link: "meet", name: "Meet", icon: "calendar_today", showCount : false},
   ];
 
   getRouteName(route : RouteDef) : string {
-    if (!route.category) return route.name;
-    return `${route.name} (${this.selectedAnimals})`;
+    if (!route.showCount) return route.name;
+    return `${route.name} (${this.selectedAnimalsCount})`;
   }
 
   isRouteEnabled(route : RouteDef) : boolean {
-    if (route.name == "Meet") return this.selectedAnimals! > 0;
+    if (route.name == "Meet") return this.selectedAnimalsCount! > 0;
     return true;
   }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
 }
