@@ -61,7 +61,7 @@ export class Store {
     private notifyOnSelectedAnimals(animal: Animal) {
         const lastSelectedAnimals = clone(this.selectedAnimalsSubject.value);
         if (!animal.checked) {
-            this.selectedAnimalsSubject.next(lastSelectedAnimals.filter(a => a.id == animal.id));
+            this.selectedAnimalsSubject.next(lastSelectedAnimals.filter(a => a.id != animal.id));
         }
         else {
 
