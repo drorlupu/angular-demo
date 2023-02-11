@@ -1,0 +1,9 @@
+.animal-cards {
+    gap: 20px;
+}
+
+.empty-category {
+    margin-top: 50px;
+    text-align: center;
+    width: 100%;
+}

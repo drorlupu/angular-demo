@@ -1,0 +1,18 @@
+<mat-tab-group>
+    <mat-tab *ngFor="let category of getCategories() | async">
+        <ng-template mat-tab-label>
+            <mat-icon svgIcon="{{category.name}}"></mat-icon>&nbsp;{{category.name}}
+        </ng-template>
+        <ng-template matTabContent>
+            <mat-card fxLayout="row wrap" fxLayoutGap="10px" class="animal-cards">
+                <ng-container *ngIf="(getAnimalsForCategory(category.id) | async) as animals">
+                    <div *ngIf="animals.length == 0" class="empty-category">
+                            Currently no animals for adoption in this category
+                    </div>
+                    <app-animal-card *ngFor="let animal of animals" [animal]="animal">                    
+                    </app-animal-card>
+                </ng-container>
+            </mat-card>
+          </ng-template>
+    </mat-tab>
+</mat-tab-group>
